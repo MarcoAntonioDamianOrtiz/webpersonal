@@ -8,6 +8,7 @@ const projects = [
     tags: ["Vue", "Inventario", "Administracion", "UX/UI"],
     github: "https://github.com/MarcoAntonioDamianOrtiz/Cafeteria",
   },
+
   {
     icon: "AS",
     name: "ASMP",
@@ -18,24 +19,26 @@ const projects = [
     github: "https://github.com/MarcoAntonioDamianOrtiz/ASMP",
     demo: "https://asmp-eight.vercel.app",
   },
+
   {
-    icon: "API",
-    name: "Apis",
-    type: "Integracion de APIs y servicios externos",
+    icon: "CW",
+    name: "CursosWeb",
+    type: "Plataforma web educativa",
     description:
-      "Proyecto para consumo de APIs, manejo de datos externos y presentacion de informacion en una experiencia web clara.",
-    tags: ["Vue", "REST APIs", "Vercel", "Datos"],
-    github: "https://github.com/MarcoAntonioDamianOrtiz/Apis",
-    demo: "https://apis-one-alpha.vercel.app",
+      "Aplicacion enfocada en la organizacion y visualizacion de cursos, diseñada con una interfaz moderna y adaptable para distintos dispositivos.",
+    tags: ["React", "TypeScript", "Vite", "Tailwind"],
+    github: "https://github.com/MarcoAntonioDamianOrtiz/CursosWeb",
+    demo: "https://marcoantoniodamianortiz.github.io/CursosWeb/",
   },
+
   {
-    icon: "MAP",
-    name: "Riesgoapp",
-    type: "Proyecto con enfoque en riesgo y ubicacion",
+    icon: "HP",
+    name: "Hospital",
+    type: "Sistema de gestion hospitalaria",
     description:
-      "Aplicacion web relacionada con mapas, geocercas, formularios dinamicos y visualizacion de informacion para tomar decisiones.",
-    tags: ["Vue", "Mapbox", "Geocercas", "Formularios"],
-    github: "https://github.com/MarcoAntonioDamianOrtiz/Riesgoapp",
+      "Proyecto orientado a la administracion de pacientes, registros medicos, control de informacion y procesos dentro de un entorno hospitalario.",
+    tags: ["Vue", "CRUD", "Base de Datos", "Administracion"],
+    github: "https://github.com/MarcoAntonioDamianOrtiz/Hospital",
   },
 ];
 
