@@ -63,8 +63,8 @@
     linear-gradient(180deg,#1a1b26 0%, #16161e 100%);
     border-bottom:1px solid var(--line-soft)}
   .hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(122,162,247,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(122,162,247,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 75%);pointer-events:none}
-  .hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;padding:72px 0 64px;align-items:center}
-  @media(max-width:900px){ .hero-inner{grid-template-columns:1fr;padding:52px 0 48px} }
+  .hero-inner{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:44px;padding-top:72px;padding-bottom:64px;align-items:center}
+  @media(max-width:900px){ .hero-inner{grid-template-columns:1fr;padding-top:52px;padding-bottom:48px} }
   .prompt{font-family:"JetBrains Mono",monospace;font-size:.85rem;color:var(--comment);margin:0 0 14px}
   .prompt b{color:var(--green);font-weight:500}
   .prompt i{color:var(--magenta);font-style:normal}
@@ -182,7 +182,7 @@
 
   /* Contact */
   .contact{margin:74px 0 0;background:linear-gradient(140deg,#1f2335,#1a1b26 60%);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
-  .contact-inner{padding:60px 0;text-align:center}
+  .contact-inner{padding-top:60px;padding-bottom:60px;text-align:center}
   .contact .mono-line{font-family:"JetBrains Mono",monospace;color:var(--teal);font-size:.88rem;margin:0 0 10px}
   .contact h2{font-size:clamp(1.8rem,4.4vw,2.6rem);margin-bottom:12px}
   .contact p{color:var(--muted);max-width:36rem;margin:0 auto 28px}
@@ -198,6 +198,91 @@
   .reveal.prep{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
   .reveal.prep.in{opacity:1;transform:none}
   @media (prefers-reduced-motion: reduce){ .reveal.prep{opacity:1;transform:none} }
+
+  /* ---------- Responsive: móvil y pantallas chicas ---------- */
+  html,body{overflow-x:clip}
+  img,svg{max-width:100%}
+  .hero-inner>*,.about-grid>*,.stack-grid>*,.proj-grid>*,.learn-grid>*{min-width:0}
+  .fact-list .v{overflow-wrap:anywhere}
+  .fact-list .k{flex:none}
+  .stack-card h3{flex-wrap:wrap}
+  .stack-card h3 .tag-ic{overflow-wrap:anywhere;max-width:100%}
+  .contact .mono-line{overflow-wrap:anywhere}
+
+  /* Navegación: en móvil pasa a dos renglones y ya no desborda */
+  @media(max-width:680px){
+    .nav{height:auto;min-height:58px;flex-wrap:wrap;gap:6px 10px;padding:10px 16px 12px}
+    .brand{font-size:.92rem}
+    nav.links{order:2;width:100%;margin-left:0;display:flex;flex-wrap:wrap;gap:4px}
+    nav.links a{flex:1 1 auto;text-align:center;padding:8px 6px;font-size:.82rem;white-space:nowrap}
+    .nav-cta{margin-left:0}
+  }
+
+  @media(max-width:760px){
+    .wrap{padding:0 20px}
+    section{padding:52px 0 4px}
+    .sec-head{gap:10px;flex-wrap:wrap}
+    .sec-head::after{min-width:24px}
+    .sec-sub{font-size:.95rem;margin-bottom:22px}
+    .card{padding:20px 18px}
+    .card p{font-size:.95rem}
+
+    /* Sobre mí: clave y valor se apilan, sin apretarse lado a lado */
+    .fact-list li{flex-direction:column;align-items:flex-start;gap:3px;padding:12px 0}
+    .fact-list .k{padding-top:0;font-size:.74rem;letter-spacing:.04em;text-transform:uppercase}
+    .fact-list .v{text-align:left;font-size:.96rem;line-height:1.45}
+
+    /* Stack: tarjetas a una columna, con aire y chips legibles */
+    .stack-grid{gap:14px}
+    .stack-card{padding:20px 18px}
+    .stack-card h3{font-size:.98rem;gap:8px}
+    .stack-card p{font-size:.88rem}
+    .chip{font-size:.78rem;padding:6px 11px}
+
+    .learn{padding:20px 18px}
+    .learn-grid{gap:14px}
+    .proj-body{padding:18px 16px 16px}
+    .more-repos{padding:18px}
+    .contact{margin-top:52px}
+    .contact-inner{padding-top:44px;padding-bottom:44px}
+  }
+
+  @media(max-width:560px){
+    .hero-inner{padding-top:42px;padding-bottom:40px;gap:30px}
+    h1{font-size:2.15rem}
+    .hero p.lead{font-size:1rem}
+    .quote{font-size:.94rem;margin:18px 0 22px}
+    .cta-row{gap:10px}
+    .cta-row .btn{flex:1 1 100%;justify-content:center;padding:13px 16px}
+
+    /* Datos rápidos del hero: uno por renglón */
+    .stats{flex-direction:column;max-width:none;margin-top:26px}
+    .stat{border-right:0;border-bottom:1px solid var(--line);padding:12px 16px;display:flex;align-items:baseline;gap:12px}
+    .stat:last-child{border-bottom:0}
+    .stat b{font-size:1.15rem;flex:none}
+    .stat span{font-size:.8rem}
+
+    .term-body{font-size:.74rem;line-height:1.75;padding:14px 13px 16px}
+
+    /* Proyectos y filtros */
+    .filters{gap:7px}
+    .filter-btn{flex:1 1 calc(50% - 7px);text-align:center;padding:10px 8px}
+    .proj-visual{height:104px}
+
+    /* Contacto: botones a todo el ancho y correo sin desbordar */
+    .contact-row{flex-direction:column;align-items:stretch}
+    .contact-row .btn{justify-content:center;overflow-wrap:anywhere;text-align:center}
+    .contact .mono-line{font-size:.78rem;line-height:1.6}
+    .foot{flex-direction:column;gap:8px}
+  }
+
+  @media(max-width:380px){
+    .wrap{padding:0 18px}
+    .nav{padding-left:14px;padding-right:14px}
+    nav.links a{font-size:.78rem;padding:8px 4px}
+    .chip{font-size:.74rem}
+    .stack-card h3 .tag-ic{font-size:.72rem}
+  }
 </style>
 </head>
 <body>
